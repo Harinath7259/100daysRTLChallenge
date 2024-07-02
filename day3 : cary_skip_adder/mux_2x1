@@ -1,5 +1,5 @@
 
-// mux_2x1.v
+
 
 module mux2x1(input a,b, sel,output out );
 
