@@ -1,0 +1,9 @@
+
+// unit_adder_block.v :
+
+module unit_adder_block( input G,P,cin,output sum,cout );
+
+assign sum  = P ^ cin;
+assign cout = G | (cin & P);
+
+endmodule
