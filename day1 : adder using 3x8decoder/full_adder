@@ -1,0 +1,19 @@
+
+## full adder.v :
+
+module adder_via_decoder(input a,b,c,
+                         input en,
+                         output reg s,cout);
+                         
+  reg y,y1,y2,y3,y4,y5,y6,y7;
+
+  decoder3x8 d (.a(a),.b(b),.c(c),.en(en),.y(y),.y1(y1),.y2(y2),.y3(y3),.y4(y4),.y5(y5),.y6(y6),.y(y7));
+
+  always@( a or b or c or en)
+
+    begin
+    s = y1|y2|y4|y7 ;
+    cout = y3|y5|y6|y7 ;
+   end
+
+endmodule
