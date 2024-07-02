@@ -1,0 +1,24 @@
+
+##carry_lookahead_addr :
+
+module carry_lookAhead_adder(
+ input [3:0]a,input [3:0]b,input cin,
+ output [3:0] sum,
+ output cout
+
+    );
+    
+    wire [3:0] G;
+    wire [3:0] P;
+    wire [2:0] c;
+    
+    
+    assign G = a & b;
+    assign P = a^b ;
+    
+    adder_block a1(G[0],P[0],cin,sum[0],c[0]);
+    adder_block a2(G[1],P[1],c[0],sum[1],c[1]);
+    adder_block a3(G[2], P[2],c[1],sum[2],c[2]);
+    adder_block a4(G[3],P[2],c[2],sum[3],cout);
+    
+endmodule
