@@ -1,0 +1,8 @@
+
+module freq_by4(input clk, rst, output clkout );
+
+ freq_by2  F1(clk, rst, clkout1) ;
+ freq_by2  F2(clkout1, rst, clkout) ;
+ 
+ 
+endmodule
